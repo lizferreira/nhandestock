@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Actualizar productos{% endblock %}
+
+{% block content %}
+<main>
+    <div>
+        <h1 id="titulo_mediano" class="mt-4 mb-4">Actualizar productos</h1>
+        
+        <form class="update-form" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" value="{{ producto_actualizado.nombre }}" required>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" name="cantidad" id="cantidad" value="{{ producto_actualizado.cantidad }}" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" id="precio" value="{{ producto_actualizado.precio }}" required>
+            </div>
+            <input class="my-button" type="submit" value="Actualizar producto">
+        </form>
+    </div>
+</main>
+{% endblock %}

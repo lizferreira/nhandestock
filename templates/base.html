@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>{% block title %} Inicio {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<!--###########    HEADER     ##########-->
+    <header>
+
+        {% block header %}
+
+        <div id="logo"></div>
+        <nav id="header">
+            <ul id="ul_header">
+                <li class="li_header"><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li class="li_header"><a href="{{ url_for('mostrar_productos') }}">Lista de productos</a></li>
+            </ul>
+        </nav>
+
+        {% endblock %}
+
+    </header>
+
+
+<!--###########    MAIN     ##########-->
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+
+
+    </main>
+
+
+
+
+<!--###########    FOOTER     ##########-->
+    <footer>
+
+        {% block footer %}
+
+        <p>2023</p>
+
+        {% endblock %}
+
+    </footer>
+</body>
+</html>

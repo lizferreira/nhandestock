@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de productos{% endblock %}
+
+{% block content %}
+<main>
+
+    <h1 id="titulo_mediano" class="mt-4 mb-4">Lista de productos</h1>
+    
+    <table class="mx-auto" id="tabla">
+        <thead>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </thead>
+
+        <tbody>
+            {% for producto in lista_productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <form action="{{ url_for('actualizar', producto_id=producto.id) }}" method="get">
+                        <input class="btn-actualizar" type="submit" value="Actualizar">
+                    </form>
+                </td>
+                <td>
+                    <form action="/eliminar" method="post">
+                        <input type="hidden" name="producto_id" value="{{ producto.id }}">
+                        <input class="btn-eliminar" type="submit" value="Eliminar">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

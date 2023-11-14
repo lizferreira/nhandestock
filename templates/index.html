@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Pagina de inicio{% endblock %}
+
+{% block content %}
+    <main>
+        <div id="bloque">
+            <h1 id="titulo_grande">Ñandestock</h1>
+            <button class="my-button" type="button"><a href="{{ url_for('cargar_productos') }}">Cargar productos</a></button>
+        </div>
+    </main>
+{% endblock %}

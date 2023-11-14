@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Cargar productos{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="mt-4 mb-4">
+        <h1 id="titulo_mediano">Cargar Productos</h1>
+    </div>
+    <form action="{{ url_for('cargar_productos') }}" method="post" class="product-form">
+        
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required />
+        </div>
+
+        <div class="form-group">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" name="cantidad" id="cantidad" required />
+        </div>
+
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" required />
+        </div>
+
+        <button class="my-button" type="submit">Cargar Producto</button>
+
+    </form>
+
+</main>
+       
+{% endblock %}
